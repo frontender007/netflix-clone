@@ -37,6 +37,10 @@ ul li {
     padding: 0 30px
 }
 
+.footer__links li a:hover {
+    color: rgba(229, 10, 20, 1);
+}
+
 ul li:last-child {
     padding-right: 0;
 }
@@ -65,3 +69,42 @@ ul li a {
     color: #fff;
     font-weight: bold;
 }
+
+
+
+/* Media queries */
+
+@media screen and (max-width: 1200px) {
+
+    .footer_helpcenter, .footer__links {
+        flex-direction: column;
+    }
+
+    .footer__links li {
+        padding: 15px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer__company {
+        flex-direction: column;
+        border-bottom: 3px solid #222;
+        align-items: center;
+    }
+
+    .footer__social {
+        justify-content: space-around;
+        padding-top: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
