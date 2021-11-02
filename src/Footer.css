@@ -83,11 +83,18 @@ ul li a {
     .footer__links li {
         padding: 15px 0;
     }
+
+    .footer__copyright {
+        padding-top: 40px;
+        color:rgba(229, 10, 20, 1);
+        font-weight: normal;
+        border-top: 1px solid #333;
+    }
 }
 
 @media screen and (max-width: 768px) {
 
-    .footer__company {
+    .footer__company, .footer_helpcenter {
         flex-direction: column;
         border-bottom: 3px solid #222;
         align-items: center;
@@ -97,6 +104,8 @@ ul li a {
         justify-content: space-around;
         padding-top: 40px;
     }
+
+    
 }
 
 
