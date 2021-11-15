@@ -48,3 +48,23 @@
     padding: 10px 25px;
     font-size: 24px;
 }
+
+
+@media screen and (max-width: 996px) {
+    .movie {
+        flex-direction: column;
+    }
+
+    .movie_poster, .movie_details {
+        border: none;
+        padding: 15px 0;
+    }
+
+    .movie_details h1 {
+        font-size: 2rem;
+    }
+
+    .movie_details p {
+        font-size: 0.9rem;
+    }
+}

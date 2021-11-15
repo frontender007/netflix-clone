@@ -6,7 +6,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 function MovieDetails() {
     let history = useNavigate();
     const baseImageUrl = 'https://image.tmdb.org/t/p/original';
-    const baseUrl = 'http://api.themoviedb.org/3/movie/';
+    const baseUrl = 'https://api.themoviedb.org/3/movie/';
     const APIKEY = '31c5922e6ef19e6cb836a9dfe6768e66';
 
     const [movie, setMovie] = useState({});
