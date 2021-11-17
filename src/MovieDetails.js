@@ -54,15 +54,20 @@ function MovieDetails() {
 
     return (
         <div className="movie">
-            <div className="banner"
-            style={{ 
-                backgroundImage: `url("${moviePoster}")`
-                }}>
-               
+            <div className="banner">
+               <img src={moviePoster} alt="Banner movie poster" />
             </div>
             <div className="movie_details">
-                <div className="movie_image">
-                    <img src={moviePoster} alt="Movie poster" />
+                <div className="movie_image"
+                    style=
+                    {{
+                        backgroundImage: `url(${moviePoster})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center center'
+                    }}
+                >
+                    {/* <img src={moviePoster} alt="Movie poster" /> */}
                 </div>
                 <div className="movie_overview">
                     <h1>{movie?.name || movie?.title || movie?.original_title}</h1>
