@@ -42,20 +42,6 @@ function MovieDetails() {
 
     }, []);
 
-    
-
-    // const getMovie = async () => {
-    //     const response = await fetch(`${baseUrl}/${params.id}?api_key=${APIKEY}`);
-        
-    //     if (response.ok) {
-    //         const data = await response.json();
-    //         if (data !== null) {
-    //             setMovie(data);
-    //         }
-    //     } else {
-    //         handleError();
-    //     }
-    // }
 
     let moviePoster = movie.backdrop_path;
     
@@ -70,13 +56,9 @@ function MovieDetails() {
         <div className="movie">
             <div className="banner"
             style={{ 
-                backgroundImage: `url("${moviePoster}")`,
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed"
+                backgroundImage: `url("${moviePoster}")`
                 }}>
-                {/* <img onClick={ handleTrailer } name={movie?.name} className="play_icon" src={playIcon} alt="Play Icon" /> */}
+               
             </div>
             <div className="movie_details">
                 <div className="movie_image">
