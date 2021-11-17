@@ -3,9 +3,19 @@
     object-fit: contain;
 }
 
+.play_icon {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+}
+
+
 .movie_details {
     display: flex;
-    background-color: #fff;
+    background-color: whitesmoke;
     width: 80%;
     margin: 50px auto;
     padding: 50px 20px;
@@ -45,7 +55,7 @@ box-shadow: -1px 0px 6px 1px rgba(255,255,255,0.55);
 .movie_overview p {
     font-size: 16px;
     line-height: 20px;
-    width: 60%;
+    width: 80%;
     padding-top: 20px;
 }
 
@@ -69,6 +79,14 @@ box-shadow: -1px 0px 6px 1px rgba(255,255,255,0.55);
 @media screen and (max-width: 768px) {
     .movie_details, .more_details {
         flex-direction: column;
+    }
+
+    .movie_details {
+        width: 90%;
+    }
+
+    .banner {
+        height: 70vh;
     }
 
 }

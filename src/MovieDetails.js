@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './MovieDetails.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import imageNotFound from './assets/images/image-not-found.png';
+// import playIcon from './assets/images/play-circle-regular.svg';
+// import YouTube from 'react-youtube';
+// import movieTrailer from 'movie-trailer';
 
 
 function MovieDetails() {
@@ -11,29 +14,48 @@ function MovieDetails() {
     const APIKEY = '31c5922e6ef19e6cb836a9dfe6768e66';
 
     const [movie, setMovie] = useState({});
+    const [trailerUrl, setTrailerUrl] = useState('');
     const params = useParams();
 
-    useEffect(() => {
+    
+
+
+    useEffect( () => {
+        const getMovie = async () => {
+        const response = await fetch(`${baseUrl}/${params.id}?api_key=${APIKEY}`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data !== null) {
+                    setMovie(data);
+                }
+            } else {
+                const handleError = () => {
+                    alert('Movie not found');
+                    setTimeout( () => {
+                        history('/');
+                    }, 1000);
+                }
+                handleError();
+            }
+        }
         getMovie();
+
     }, []);
 
-    const handleError = () => {
-        alert('Movie not found');
-        setTimeout( () => {
-            history('/');
-        }, 1000);
-    }
+    
 
-    const getMovie = async () => {
-        const response = await fetch(`${baseUrl}/${params.id}?api_key=${APIKEY}`);
+    // const getMovie = async () => {
+    //     const response = await fetch(`${baseUrl}/${params.id}?api_key=${APIKEY}`);
         
-        if (response.ok) {
-            const data = await response.json();
-            if (data !== null) setMovie(data);
-        } else {
-            handleError();
-        }
-    }
+    //     if (response.ok) {
+    //         const data = await response.json();
+    //         if (data !== null) {
+    //             setMovie(data);
+    //         }
+    //     } else {
+    //         handleError();
+    //     }
+    // }
 
     let moviePoster = movie.backdrop_path;
     
@@ -42,18 +64,19 @@ function MovieDetails() {
     } else {
         moviePoster = baseImageUrl + moviePoster;
     }
+   
 
-    // )
-    console.log(movie);
     return (
         <div className="movie">
             <div className="banner"
             style={{ 
-                backgroundImage:`url("${moviePoster}"`,
+                backgroundImage: `url("${moviePoster}")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat"
-            }}>
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed"
+                }}>
+                {/* <img onClick={ handleTrailer } name={movie?.name} className="play_icon" src={playIcon} alt="Play Icon" /> */}
             </div>
             <div className="movie_details">
                 <div className="movie_image">
