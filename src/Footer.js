@@ -29,12 +29,18 @@ const Footer = () => {
 
             <div className="footer_helpcenter">
                 <ul className="footer__links">
-                    <li><a href="https://jobs.netflix.com/">Careers</a></li>
-                    <li><a href="https://help.netflix.com/en">Help Center</a></li>
-                    <li><a href="https://www.netflix.com/gb/">Netflix.com</a></li>
-                    <li><a href="https://help.netflix.com/en/legal/media-terms-and-conditions">Terms of Service</a></li>
-                    <li><a href="https://help.netflix.com/en/legal/privacy">Privacy</a></li>
-                    <li><a href="https://help.netflix.com/en">Cookie Preference</a></li>
+                    <span className="footer__links__row">
+                        <li><a href="https://jobs.netflix.com/">Careers</a></li>
+                        <li><a href="https://help.netflix.com/en">Help Center</a></li>
+                    </span>
+                    <span className="footer__links__row">
+                        <li><a href="https://www.netflix.com/gb/">Netflix.com</a></li>
+                        <li><a href="https://help.netflix.com/en/legal/media-terms-and-conditions">Terms of Service</a></li>
+                    </span>
+                    <span className="footer__links__row">
+                        <li><a href="https://help.netflix.com/en/legal/privacy">Privacy</a></li>
+                        <li><a href="https://help.netflix.com/en">Cookie Preference</a></li>
+                    </span>
                 </ul>
                 <p className="footer__copyright">&copy; 2021 NetFlix</p>
             </div>

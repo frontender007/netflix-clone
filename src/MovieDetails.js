@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './MovieDetails.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import imageNotFound from './assets/images/image-not-found.png';
-// import playIcon from './assets/images/play-circle-regular.svg';
-// import YouTube from 'react-youtube';
-// import movieTrailer from 'movie-trailer';
+
 
 
 function MovieDetails() {
@@ -14,7 +12,6 @@ function MovieDetails() {
     const APIKEY = '31c5922e6ef19e6cb836a9dfe6768e66';
 
     const [movie, setMovie] = useState({});
-    const [trailerUrl, setTrailerUrl] = useState('');
     const params = useParams();
 
     
@@ -58,16 +55,8 @@ function MovieDetails() {
                <img src={moviePoster} alt="Banner movie poster" />
             </div>
             <div className="movie_details">
-                <div className="movie_image"
-                    style=
-                    {{
-                        backgroundImage: `url(${moviePoster})`,
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center center'
-                    }}
-                >
-                    {/* <img src={moviePoster} alt="Movie poster" /> */}
+                <div className="movie_image">
+                    <img src={moviePoster} alt="Descriptin movie poster" />
                 </div>
                 <div className="movie_overview">
                     <h1>{movie?.name || movie?.title || movie?.original_title}</h1>
