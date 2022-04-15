@@ -1,28 +1,25 @@
-import './App.css';
+import "./App.css";
 // import reqeuests from './requests';
 // import Row from './Row';
 // import Banner from './Banner';
-import { useState } from 'react';
-import Nav from './Nav';
-import Home from './Home';
-import Footer from './Footer';
-import MovieDetails from './MovieDetails';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { useState } from "react";
+import Nav from "./Nav";
+import Home from "./Home";
+import Footer from "./Footer";
+import MovieDetails from "./MovieDetails";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-
   const [movie, setMovie] = useState({});
 
-  
-
   return (
-    <Router>
+    <Router basename="/">
       <div className="app">
         <Nav />
         <Routes>
-          <Route exact path="/" element={<Home />} /> 
+          <Route exact path="/" element={<Home />} />
           <Route path="/netflix-clone" element={<Home />} />
-            {/* <Banner />
+          {/* <Banner />
             <Row title="NetFlix Originals" fetchUrl={reqeuests.fetchNetflixOriginal} isLargeRow/>
             <Row title="Trending Now" fetchUrl={reqeuests.fetchTreding} />
             <Row title="Action Movies" fetchUrl={reqeuests.fetchActionMovies} />
